@@ -1,6 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Medal } from "lucide-react";
 import Link from "next/link";
+import {cn} from '@/lib/utils'
+import { Poppins } from "next/font/google";
+
+
+const textFont = Poppins({
+  subsets:['latin'],
+  weight: [
+    "100", "200", "300", "400", "500", "600", "700", "800", "900"
+  ]
+})
+  
 
 const MarketingPage = () => {
   return (
@@ -17,13 +28,15 @@ const MarketingPage = () => {
           Work forward
         </div>
       </div>
-      <div className="text-sm md:text-xl text-neutral-400 mt-4 mx-w-xs md:max-w-2xl text-center mx-auto">
+      <div className={cn("text-sm md:text-xl text-neutral-400 mt-4 mx-w-xs md:max-w-2xl text-center mx-auto",
+        textFont.className
+      )}>
         Collaborate manage projects and reach new project productivity. From
         high rises to the home office,  the way your team works is unique
         accomplish it all with Taskify.
       </div>
       <Button className="mt-6" size='lg'asChild>
-        <Link href='signup'>
+        <Link href='signup' scroll={false}>
         Get Taskify for free
         </Link> 
         
